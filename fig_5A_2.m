@@ -1,0 +1,10 @@
+ii=17;
+load(['post_samps_v22/fixed/subj_samps_',num2str(ii),'.mat']);
+subj.params_phi_map=subj.params_phi_map_theta;
+subj.plot_model_pred(subj,subplot(1,1,1),0);drawnow
+load(['post_samps_v22/fixed_null/subj_samps_bfit_',num2str(ii),'.mat']);
+subj.plot_model_pred(subj,subplot(1,1,1),0);drawnow
+xlabel('');
+ylabel('');
+standardize_figure(1,[2,1.5])
+saveas(gcf,['plots/fig_5A_2'],'pdf');
